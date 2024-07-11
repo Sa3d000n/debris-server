@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
+    <title>
+      DEBRIS - Detection and Exploration for Rescue, Investgation and Survival
+    </title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar" id="navBar">
+        <span class="menu-icon" id="menu-icon">&#9776;</span>
+      </div>
+      <div class="drawer" id="drawer">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="top-header">
+        <div class="debris-img">
+          <img src="{{url_for('static',filename='images/debris.png')}}" alt="Small car-robot" />
+        </div>
+        <div class="header-content">
+          <h1>
+            <strong>DEBRIS</strong>
+          </h1>
+          <p>Detection and Exploration for Rescue, Investgation and Survival</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="imagery">
+        <article class="live-stream">
+          <img src="/live-stream" alt="Live stream of the robot camera" />
+          <!-- <iframe
+            src="https://www.youtube.com/embed/3vLtrubLtEY"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Live Stream of DEBRIS Bot in Action"
+          ></iframe> -->
+        </article>
+      </section>
+      <section class="readings-container">
+        <article class="readings">
+          <svg class="icon">
+            <use xlink:href="#icon-temperature"></use>
+          </svg>
+          <h2 class="readings-title">Temperature</h2>
+          <p class="readings-value" id="temperature"></p>
+        </article>
+        <article class="readings">
+          <svg class="icon">
+            <use xlink:href="#icon-pressure"></use>
+          </svg>
+          <h2 class="readings-title">Pressure</h2>
+          <p class="readings-value" id="pressure"></p>
+        </article>
+        <article class="readings">
+          <svg class="icon">
+            <use xlink:href="#icon-humidity"></use>
+          </svg>
+          <h2 class="readings-title">Humidity</h2>
+          <p class="readings-value" id="humidity"></p>
+        </article>
+        <article class="readings">
+          <svg class="icon">
+            <use xlink:href="#icon-doppler"></use>
+          </svg>
+          <h2 class="readings-title">Doppler</h2>
+          <p class="readings-value" id="doppler"></p>
+        </article>
+        <article class="readings">
+          <svg class="icon">
+            <use xlink:href="#icon-conclusion"></use>
+          </svg>
+          <h2 class="readings-title">Conclusion</h2>
+          <p class="readings-value" id="conclusion"></p>
+        </article>
+      </section>
+      <!-- <section class="map-container">
+        <article id="map"></article>
+      </section> -->
+    </main>
+    <svg style="display: none">
+      <symbol id="icon-temperature" viewBox="0 0 320 512">
+        <path
+          d="M160 64c-26.5 0-48 21.5-48 48V276.5c0 17.3-7.1 31.9-15.3 42.5C86.2 332.6 80 349.5 80 368c0 44.2 35.8 80 80 80s80-35.8 80-80c0-18.5-6.2-35.4-16.7-48.9c-8.2-10.6-15.3-25.2-15.3-42.5V112c0-26.5-21.5-48-48-48zM48 112C48 50.2 98.1 0 160 0s112 50.1 112 112V276.5c0 .1 .1 .3 .2 .6c.2 .6 .8 1.6 1.7 2.8c18.9 24.4 30.1 55 30.1 88.1c0 79.5-64.5 144-144 144S16 447.5 16 368c0-33.2 11.2-63.8 30.1-88.1c.9-1.2 1.5-2.2 1.7-2.8c.1-.3 .2-.5 .2-.6V112zM208 368c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-20.9 13.4-38.7 32-45.3V112c0-8.8 7.2-16 16-16s16 7.2 16 16V322.7c18.6 6.6 32 24.4 32 45.3z"
+        />
+      </symbol>
+      <symbol id="icon-pressure" viewBox="0 0 512 512">
+        <path
+          d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+        />
+      </symbol>
+      <symbol id="icon-humidity" viewBox="0 0 384 512">
+        <path
+          d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0h1.8c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"
+        />
+      </symbol>
+      <symbol id="icon-doppler" viewBox="0 0 512 512">
+        <path
+          d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+        />
+      </symbol>
+      <symbol id="icon-conclusion" viewBox="0 0 512 512">
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+        />
+      </symbol>
+    </svg>
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw1rYfgwgvNunIChSCTrTLahpi7f91dVo&callback=initMap"
+      async
+      defer
+    ></script> -->
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+  </body>
+</html>

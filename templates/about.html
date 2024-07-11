@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+    <title>About</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar" id="navBar">
+        <span class="menu-icon" id="menu-icon">&#9776;</span>
+      </div>
+      <div class="drawer" id="drawer">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="about-container">
+          <article class="about-sec">
+            <h2 style="color: #3f5592; font-size: 30px">About DEBRIS</h2>
+            <ul>
+              <li>
+                <p>
+                  In the face of natural or man-made disaster, urban search and
+                  rescue teams and other first responders like police, medical
+                  units or civil protection race against the clock to locate
+                  survivors within the critical 72-hour timeframe (Golden
+                  Hours), facing challenges such as instable structures or
+                  hazardous environments but also insufficient situational
+                  awareness – all resulting in lengthy SaR processes. In order
+                  to speed up the detection of survivors trapped in collapsed
+                  buildings and to improve working conditions for the first
+                  responders.
+                </p>
+              </li>
+              <li>
+                <p>
+                  DEBRIS, an advanced robotic system designed for navigating
+                  challenging environments to aid in rescue operations,
+                  investigations, and survival scenarios. Equipped with sensors
+                  and a camera, DEBRIS gathers crucial data and imagery, which
+                  is then transmitted to a central hub for real-time analysis
+                  and decision-making.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The primary objective of DEBRIS (Detection and Exploration Bot
+                  for Rescue, Investigation, and Survival) is to develop an
+                  advanced, user-friendly Search and Rescue (SaR) system
+                  designed to rapidly and accurately detect and locate
+                  individuals trapped in disaster zones. DEBRIS aims to
+                  significantly reduce response times by utilizing a
+                  sophisticated integration of sensor data and real-time camera
+                  feeds to create a unified, comprehensive operational overview.
+                  This system will support the prioritization and execution of
+                  critical actions during SaR missions, thereby enhancing the
+                  efficiency and effectiveness of rescue operations and
+                  increasing the likelihood of saving lives.
+                </p>
+              </li>
+            </ul>
+          </article>
+          <div class="img-container">
+            <img src="{{url_for('static',filename='images/car-robot.jpeg')}}" alt="Car with light attached" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  </body>
+</html>
